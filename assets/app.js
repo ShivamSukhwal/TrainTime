@@ -14,3 +14,13 @@ var config = {
 firebase.initializeApp(config);
 
 var database = firebase.database();
+
+function updateClock() {
+  var clock = moment().format("h:mm:ss a");
+
+  var c = $("<h2>");
+  var c2 = c.append(clock);
+  $("#clock").html(c2);
+}
+
+setInterval(updateClock, 1000);
